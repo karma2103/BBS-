@@ -1,0 +1,35 @@
+<%- include('../partials/header'); %>
+
+    <div class="container mt-5">
+        <div class="container mt-5">
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <!-- First Row -->
+                    <div class="col-md-12 mb-3">
+                        <label for="title" class="form-label">Forms Title</label>
+                        <input type="text" name="title" class="form-control" id="title" placeholder="Enter the Name of the Forms." required>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- First Row -->
+                    <div class="col-md-12 mb-3">
+                        <label for="file" class="form-label">Choose File</label>
+                        <input type="file" name="file" class="form-control" id="file" required>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Upload</button>
+            </form>
+       
+        </div>
+    </div>
+    <br><br>
+    <style>
+        .form-control,
+        .form-select {
+            height: calc(2.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+        }
+    </style>
+
+    <%- include('../partials/footer'); %>

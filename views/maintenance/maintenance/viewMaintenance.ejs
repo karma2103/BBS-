@@ -1,0 +1,43 @@
+<%- include('../../partials/header'); %>
+    <div class="container mt-5">
+        <h3 class="mb-4">Maintenance Report</h3>
+        <div class="d-flex justify-content-end mb-3">
+            <a href="/maintenance" class="btn btn-primary">Update Maintenance Work</a>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Today's Events</th>
+                    <th>Work Done (Yesterday)</th>
+                    <th>Special Comments</th>
+                    <th>Morning</th>
+                    <th>Evening</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (m.length > 0) { %>
+                    <% m.forEach((main, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= main.todaysEvent %></td>
+                            <td><%= main.regularWork %></td>
+                            <td><%= main.specialComment %></td>
+                            <td><%= main.morning %></td>
+                            <td><%= main.evening %></td>
+                            </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="9" class="text-center">Not Updated.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<%- include('../../partials/footer'); %>

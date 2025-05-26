@@ -1,0 +1,38 @@
+<%- include('../../partials/header'); %>
+<div class="container mt-5">
+    <h2>Maintenance Daily Report</h2>
+    <form action="/CreateMaintenance" method="POST">
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="todaysEvent" class="form-label">Today's Event</label>
+          <textarea class="single-input" id="todaysEvent" name="todaysEvent" style="height: 100px; " placeholder="Enter today's event" required></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="regularWork" class="form-label">Regular Work</label>
+          <textarea class="single-input" id="regularWork" style="height: 100px;" name="regularWork" placeholder="Enter regular work details" required></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="specialComments" class="form-label">Special Comments</label>
+          <textarea class="single-input" id="specialComments" style="height: 100px;" name="specialComment" placeholder="Enter any special comments" required></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="morning" class="form-label">Morning</label>
+          <textarea class="single-input" id="morning" style="height: 100px;" name="morning" placeholder="Enter morning activities" required></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="evening" class="form-label">Evening</label>
+          <textarea class="single-input" id="evening" style="height: 100px;" name="evening" placeholder="Enter evening activities" required></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <%- include('../../partials/footer'); %>

@@ -1,0 +1,51 @@
+<%- include('../partials/header'); %>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Generate Report</h2>
+    <form action="/generate-report" method="GET">
+
+      <div class="row mb-3">
+        <!-- Start Date -->
+        <div class="col-md-6 mb-3">
+          <label for="startDate" class="form-label">Start Date</label>
+          <input type="date" name="startDate" id="startDate">
+        </div>
+        <!-- End Date -->
+        <div class="col-md-6 mb-3">
+          <label for="endDate" class="form-label">End Date</label>
+          <input type="date" class="single-input" name="endDate" id="endDate">
+        </div>
+      </div>
+      <div class="row mb-3">
+      <div class="col-md-6 md-3">
+        <label for="reportType" class="form-label">Select Report Type</label>
+        <select name="reportType" id="reportType">
+          <option value="PDF">PDF</option>
+          
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="reportType" class="form-label">Select Category</label>
+        <select name="Category"  id="reportType">
+          <option selected  disabled>Select Report Category</option>
+          <option value="it">IT</option>
+          <option value="power">Power</option>
+          <option value="maintenance">Maintenance</option>
+          <option value="maintenance">Transmission</option>
+          <option value="studio">Studio</option>
+        </select>
+      </div>
+    </div>
+      
+      <button type="submit" class="btn btn-primary mt-5">Generate Report</button>
+    </form>
+</div>
+
+<style>
+  .form-control, .form-select {
+      height: calc(2.5em + .75rem + 2px);
+      padding: .375rem .75rem;
+  }
+</style>
+
+<%- include('../partials/footer'); %>

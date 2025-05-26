@@ -1,0 +1,83 @@
+<%- include('../partials/header'); %>
+<section class="blog_area bottom-padding pt-40">
+    <div class="container">
+        <h2 class="mb-4 text-center"><b>Books/Manuals</b></h2>
+        <div class="input-group mb-12">
+            <form id="searchForm" action="/manual" method="GET" class="input-group md-4">
+                <input type="text" class="form-control" placeholder="Search for a form..." id="searchInput">
+                <button class="btn btn-primary" type="button" >Search</button>
+            </form>
+        </div><br>
+
+        <!-- Files List -->
+        <div class="col-lg-12 mb-5 mb-lg-0">
+            <div class="blog_left_sidebar">
+                <% if(files.length > 0) { %>
+                    <% files.forEach(file => { %>
+                        <article class="blog_item mb-4">
+                            <div class="blog_details p-4 shadow-sm rounded">
+                                <a class="d-inline-block" href="/files/view/<%= file.filename %>">
+                                    <h2 class="blog-head" style="color: #2d2d2d;">
+                                        <%= file.title %>
+                                    </h2>
+                                </a>
+                                <p class="text-muted mb-2">Uploaded on: <%= file.date.toDateString() %></p>
+                                <ul class="blog-info-link" style="margin-left: -35px;">
+                                    <li>
+                                        <a href="/files/download/<%= file.filename %>">
+                                            <i class="fa fa-download"></i> Download
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </article>
+                    <% }) %>
+                <% } else { %>
+                    <p class="text-center text-muted">No forms available at the moment.</p>
+                <% } %>
+
+                <!-- Pagination -->
+                <nav class="blog-pagination justify-content-center d-flex mt-5">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a href="#" class="page-link" aria-label="Previous">
+                                <i class="ti-angle-left"></i>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link">1</a>
+                        </li>
+                        <li class="page-item active">
+                            <a href="#" class="page-link">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a href="#" class="page-link" aria-label="Next">
+                                <i class="ti-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    function searchForms() {
+        const searchInput = document.getElementById('searchInput').value.toLowerCase();
+        const files = document.querySelectorAll('.blog_item'); // Get all file items
+    
+        files.forEach(file => {
+            const title = file.querySelector('.blog-head').textContent.toLowerCase();
+            if (title.includes(searchInput)) {
+                file.style.display = 'block'; // Show matching item
+            } else {
+                file.style.display = 'none'; // Hide non-matching item
+            }
+        });
+    }
+    
+    // Optional: Add event listener to trigger search on input change
+    document.getElementById('searchInput').addEventListener('input', searchForms);
+    </script>
+
+<%- include('../partials/footer'); %>

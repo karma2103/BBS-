@@ -1,0 +1,45 @@
+<%- include('../../partials/header'); %>
+    <div class="container mt-5">
+        <h3 class="mb-4">IT Daily Report</h3>
+        <div class="d-flex justify-content-end mb-3">
+            <a href="/maintenance" class="btn btn-primary">Update Transmission Work</a>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Today's Events</th>
+                    <th>Work Done (Yesterday)</th>
+                    <th>Special Comments</th>
+                    <th>TV</th>
+                    <th>FMandSW</th>
+                    <th>GPS Reading</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (transm.length > 0) { %>
+                    <% transm.forEach((T, index) => { %>
+                        <tr>
+                            <td><%= index + 1 %></td>
+                            <td><%= T.todaysEvent %></td>
+                            <td><%= T.workDone %></td>
+                            <td><%= T.specialComment %></td>
+                            <td><%= T.tv %></td>
+                            <td><%= T.FMandSW %></td>
+                            <td><%= T.GPSReading %></td>
+                            </tr>
+                    <% }) %>
+                <% } else { %>
+                    <tr>
+                        <td colspan="9" class="text-center">Not Updated.</td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<%- include('../../partials/footer'); %>

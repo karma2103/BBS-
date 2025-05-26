@@ -1,0 +1,71 @@
+<%- include('../partials/header'); %>
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Report for <%= category %></h2>
+    <p><strong>Date Range:</strong> From <%= startDate %> to <%= endDate %></p>
+
+    <% if (data.length > 0) { %>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <% if (category.toLowerCase() === 'power') { %>
+                        <th>Today's Event</th>
+                        <th>Work Done</th>
+                        <th>Special Comment</th>
+                        <th>Generator Reading</th>
+                    <% } else if (category.toLowerCase() === 'studio') { %>
+                        <th>Today's Event</th>
+                        <th>Work Done</th>
+                        <th>Special Comment</th>
+                        <th>Air on Equipment</th>
+                        <th>Post Production</th>
+                    <% } else if (category.toLowerCase() === 'it') { %>
+                        <th>Today's Event</th>
+                        <th>Work Done</th>
+                        <th>Special Comment</th>
+                    <% } else if (category.toLowerCase() === 'maintenance') { %>
+                        <th>Today's Event</th>
+                        <th>Work Done</th>
+                        <th>Special Comment</th>
+                        <th>Morning</th>
+                        <th>Evening</th>
+                    <% } else if (category.toLowerCase() === 'transmission') { %>
+                        <th>Today's Event</th>
+                        <th>Work Done</th>
+                        <th>Special Comment</th>
+                        <th>TV</th>
+                        <th>FM and SW</th>
+                        <th>GPS Reading</th>
+                    <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.forEach(item => { %>
+                    <tr>
+                        <td><%= item.todaysEvent %></td>
+                        <td><%= item.workDone %></td>
+                        <td><%= item.SpecialComment %></td>
+
+                        <% if (category.toLowerCase() === 'power') { %>
+                            <td><%= item.generatorReading %></td>
+                        <% } else if (category.toLowerCase() === 'studio') { %>
+                            <td><%= item.AironEquiptment %></td>
+                            <td><%= item.postProduction %></td>
+                        <% } else if (category.toLowerCase() === 'maintenance') { %>
+                            <td><%= item.morning %></td>
+                            <td><%= item.evening %></td>
+                        <% } else if (category.toLowerCase() === 'transmission') { %>
+                            <td><%= item.tv %></td>
+                            <td><%= item.FMandSW %></td>
+                            <td><%= item.GPSReading %></td>
+                        <% } %>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    <% } else { %>
+        <p>No records found for the selected date range.</p>
+    <% } %>
+</div>
+
+<%- include('../partials/footer'); %>

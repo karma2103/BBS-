@@ -1,0 +1,33 @@
+<%- include('../../partials/header'); %>
+<div class="container mt-5">
+    <h2>Power Daily Report</h2>
+    <form action="/CreatePower" method="POST">
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="todaysEvent" class="form-label">Today's Event</label>
+          <textarea class="single-input" id="todaysEvent" required name="todaysEvent" style="height: 100px; " placeholder="Enter today's event"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="regularWork" class="form-label">Work Done</label>
+          <textarea class="single-input" required id="regularWork" name="workDone" style="height: 100px;" placeholder="Enter regular work details"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="specialComments" class="form-label">Special Comments</label>
+          <textarea class="single-input" required id="specialComments" name="specialComment" style="height: 100px;" placeholder="Enter any special comments"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="morning" class="form-label">Generator Reading </label>
+          <textarea class="single-input" required id="morning" name="generatorReading" style="height: 100px;" placeholder="Enter morning activities"></textarea>
+        </div>
+      </div>
+   
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <%- include('../../partials/footer'); %>

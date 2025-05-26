@@ -1,0 +1,45 @@
+<%- include('../../partials/header'); %>
+<div class="container mt-5">
+    <h2>Transmission Daily Report</h2>
+    <form action ="/CreateTransmission" method="post">
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="todaysEvent" class="form-label">Today's Event</label>
+          <textarea class="single-input" required id="todaysEvent" name="todaysEvent" style="height: 100px; " placeholder="Enter today's event"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="regularWork" class="form-label">Work Done(Yesterday)</label>
+          <textarea class="single-input" required id="regularWork" name="regularWork" style="height: 100px;" placeholder="Enter regular work details"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="specialComments" class="form-label">Special Comments</label>
+          <textarea class="single-input" required id="specialComments" name="specialComment" style="height: 100px;" placeholder="Enter any special comments"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="morning" class="form-label">TV </label>
+          <textarea class="single-input" required id="morning" name="tv" style="height: 100px;" placeholder="Enter morning activities"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="morning" class="form-label">FM and SW </label>
+          <textarea class="single-input" required id="morning" name="FMandSW" style="height: 100px;" placeholder="Enter morning activities"></textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-12">
+          <label for="morning" class="form-label">GPS Reading </label>
+          <textarea class="single-input" required id="morning" name="GPSReading" style="height: 100px;" placeholder="Enter morning activities"></textarea>
+        </div>
+      </div>
+   
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  <%- include('../../partials/footer'); %>

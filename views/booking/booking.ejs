@@ -1,0 +1,76 @@
+<%- include('../partials/header'); %>
+
+    <div class="container mt-5">
+        <!-- Top-right View Booking Studio button -->
+        <div class="d-flex justify-content-end mb-3">
+            <a href="/viewBookingStudio" class="btn btn-primary">View Booking Studio</a>
+        </div>
+        <div class="container mt-5">
+
+            <form action="/bookingStuido" method="POST">
+                <div class="row">
+                    <!-- First Row -->
+                    <div class="col-md-6 mb-3">
+                        <label for="producerName" class="form-label">Producer Name</label>
+                        <input type="text" class="single-input" id="producerName" name="producerName"
+                            placeholder="Enter producer name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="programTitle" class="form-label">Program Title</label>
+                        <input type="text" class="single-input" id="programTitle" name="programTitle"
+                            placeholder="Enter program title">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- First Row -->
+                    <div class="col-md-6 mb-3">
+                        <label for="NameofUser" class="form-label">User Name</label>
+                        <input type="text" class="single-input" id="userName" name="userName"
+                            placeholder="Enter User name">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="Designation" class="form-label">Designation</label>
+                        <input type="text" class="single-input" id="designation" name="designation"
+                            placeholder="Enter designation">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Second Row -->
+                    <div class="col-md-6 mb-3">
+                        <label for="bookingDate" class="form-label">Booking Date</label>
+                        <input type="date" class="single-input" name="bookingDate" id="bookingDate">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="setupDate" class="form-label">Set Up Date</label>
+                        <input type="date" class="single-input" name="setupDate" id="setupDate">
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Third Row -->
+                    <div class="col-md-6 mb-3">
+                        <label for="setupTime" class="form-label">Set Up Time</label>
+                        <input type="time" class="single-input" name="setupTime" id="setupTime">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="venue" class="form-label">Venue</label>
+                        <select class="single-input" id="venue" name="venue">
+                            <option selected disabled>Select a venue</option>
+                            <option value="tvStudio">TV Studio</option>
+                            <option value="newsStudio">News Studio</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+    <br><br>
+    <style>
+        .form-control,
+        .form-select {
+            height: calc(2.5em + .75rem + 2px);
+            padding: .375rem .75rem;
+        }
+    </style>
+
+    <%- include('../partials/footer'); %>
